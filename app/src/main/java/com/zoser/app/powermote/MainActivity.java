@@ -53,21 +53,21 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
 
         _buttonPowerAll = (ImageButton) findViewById(R.id.id_Button_ALL);
 
-        _button[0] =  createIRButton("HDMI HUB",R.drawable.icon_04,_rows[0], new IRMessageRequest(IRMessages.HDMI_SPLITTER_ON));
-        _button[1] =  createIRButton("LG TV",R.drawable.icon_01,_rows[0],new IRMessageRequest(IRMessages.HOME_LG_TV_ON));
-        _button[2] =  createIRButton("HOME THEATER",R.drawable.icon_03,_rows[0],new IRMessageRequest(IRMessages.HOME_SONY_HT_ON));
+        _button[0] = createIRButton("Xiaomi TV", R.drawable.icon_01, _rows[0], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_POWER));
+        _button[1] = createIRButton("VOLUME UP", R.drawable.icon_02, _rows[2], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_VOLUME_UP));
+        _button[2] = createIRButton("VOLUME DOWN", R.drawable.icon_08, _rows[3], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_VOLUME_DOWN));
 
-        _button[3] =  createIRButton("HDMI 1",R.drawable.icon_09,_rows[1],new IRMessageRequest(IRMessages.HDMI_SPLITTER_SET_1));
-        _button[4] =  createIRButton("HDMI 2",R.drawable.icon_09,_rows[1],new IRMessageRequest(IRMessages.HDMI_SPLITTER_SET_2));
-        _button[5] =  createIRButton("HTPC",R.drawable.icon_10,_rows[1],new IRMessageRequest(IRMessages.HDMI_SPLITTER_SET_3));
+        _button[3] = createIRButton("MUTE", R.drawable.icon_mute, _rows[4], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_MUTE));
+        _button[4] = createIRButton("UP", R.drawable.icon_up, _rows[4], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_UP));
+        _button[5] = createIRButton("INPUT", R.drawable.icon_input, _rows[4], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_INPUT));
 
-        _button[6] =  createIRButton("VOLUME UP",R.drawable.icon_02,_rows[2],new IRMessageRequest(IRMessages.HOME_LG_TV_VOLUME_UP));
-        _button[7] =  createIRButton("CHROMECAST",R.drawable.icon_06,_rows[2],new IRMessageRequest(IRMessages.HDMI_SPLITTER_SET_5));
-        _button[8] =  createIRButton("VOLUME UP",R.drawable.icon_02,_rows[2],new IRMessageRequest(IRMessages.HOME_SONY_HT_VOLUME_UP));
+        _button[6] = createIRButton("LEFT", R.drawable.icon_left, _rows[4], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_LEFT));
+        _button[7] = createIRButton("OK", R.drawable.icon_ok, _rows[4], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_OK));
+        _button[8] = createIRButton("RIGHT", R.drawable.icon_right, _rows[4], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_RIGHT));
 
-        _button[9] =  createIRButton("VOLUME DOWN",R.drawable.icon_08,_rows[3],new IRMessageRequest(IRMessages.HOME_LG_TV_VOLUME_DOWN));
-        _button[10] =  createIRButton("SWITCH",R.drawable.icon_07,_rows[3],new IRMessageRequest(IRMessages.HDMI_SPLITTER_SET_4));
-        _button[11] =  createIRButton("VOLUME DOWN",R.drawable.icon_08,_rows[3],new IRMessageRequest(IRMessages.HOME_SONY_HT_VOLUME_DOWN));
+        _button[9] = createIRButton("FWD", R.drawable.icon_ok, _rows[4], new IRMessageRequest(IRMessages. XIAOMI_TV_4S_FWD));
+        _button[10] = createIRButton("DOWN", R.drawable.icon_down, _rows[4], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_DOWN));
+        _button[11] = createIRButton("REW", R.drawable.icon_ok, _rows[4], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_REW));
 
         _lastBurstTime = System.nanoTime();
 
