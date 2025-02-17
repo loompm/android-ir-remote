@@ -24,16 +24,18 @@ public class IRMessages
     public static IRMessage HOME_LG_TV_VOLUME_UP;
     public static IRMessage HOME_LG_TV_VOLUME_DOWN;
     // Xiaomi TV
-    public static IRMessage XIAOMI_TV_4S_POWER;
-    public static IRMessage XIAOMI_TV_4S_VOLUME_UP;
-    public static IRMessage XIAOMI_TV_4S_VOLUME_DOWN;
+    public static IRMessage XIAOMI_TV_4S_1;
+    public static IRMessage XIAOMI_TV_4S_2;
+    public static IRMessage XIAOMI_TV_4S_3;
     public static IRMessage XIAOMI_TV_4S_MUTE;
     public static IRMessage XIAOMI_TV_4S_INPUT;
-    public static IRMessage XIAOMI_TV_4S_UP;
-    public static IRMessage XIAOMI_TV_4S_DOWN;
-    public static IRMessage XIAOMI_TV_4S_LEFT;
-    public static IRMessage XIAOMI_TV_4S_RIGHT;
-    public static IRMessage XIAOMI_TV_4S_OK;
+    public static IRMessage XIAOMI_TV_4S_4;
+    public static IRMessage XIAOMI_TV_4S_5;
+    public static IRMessage XIAOMI_TV_4S_6;
+    public static IRMessage XIAOMI_TV_4S_7;
+    public static IRMessage XIAOMI_TV_4S_8;
+    public static IRMessage XIAOMI_TV_4S_9;
+    public static IRMessage XIAOMI_TV_4S_0;
     public static IRMessage XIAOMI_TV_4S_FWD;
     public static IRMessage XIAOMI_TV_4S_REW;
 
@@ -65,17 +67,20 @@ public class IRMessages
 
         int deviceCode = 0x86;
 
-        XIAOMI_TV_4S_POWER = IRNecFactory.create(0xcc, 0x3c, 2);
-        XIAOMI_TV_4S_VOLUME_UP = IRNecFactory.create(0x0e, deviceCode, 2);
-        XIAOMI_TV_4S_VOLUME_DOWN = IRNecFactory.create(0x0f, deviceCode, 2);
         XIAOMI_TV_4S_MUTE = IRNecFactory.create(0xa1, deviceCode, 2);
         XIAOMI_TV_4S_INPUT = IRNecFactory.create(0x01, deviceCode, 2);
-        XIAOMI_TV_4S_UP = IRNecFactory.create(0x05, deviceCode, 2);
-        XIAOMI_TV_4S_DOWN = IRNecFactory.create(0x06, deviceCode, 2);
-        XIAOMI_TV_4S_LEFT = IRNecFactory.create(0x0b, deviceCode, 2);
-        XIAOMI_TV_4S_RIGHT = IRNecFactory.create(0x0c, deviceCode, 2);
-        XIAOMI_TV_4S_OK = IRNecFactory.create(0x0d, deviceCode, 2);
         XIAOMI_TV_4S_FWD = IRNecFactory.create(0xa7, deviceCode, 2);
         XIAOMI_TV_4S_REW = IRNecFactory.create(0xa8, deviceCode, 2);
+        XIAOMI_TV_4S_1 = IRNecFactory.create(0xc1, deviceCode, 2);
+        XIAOMI_TV_4S_2 = IRNecFactory.create(0xc2, deviceCode, 2);
+        XIAOMI_TV_4S_3 = IRNecFactory.create(0xc3, deviceCode, 2);
+        XIAOMI_TV_4S_4 = IRNecFactory.create(0xc4, deviceCode, 2);
+        XIAOMI_TV_4S_5 = IRNecFactory.create(0xc5, deviceCode, 2);
+        XIAOMI_TV_4S_6 = IRNecFactory.create(0xc6, deviceCode, 2);
+        XIAOMI_TV_4S_7 = IRNecFactory.create(0xc7, deviceCode, 2);
+        XIAOMI_TV_4S_8 = IRNecFactory.create(0xc8, deviceCode, 2);
+        XIAOMI_TV_4S_9 = IRNecFactory.create(0xc9, deviceCode, 2);
+        XIAOMI_TV_4S_0 = IRNecFactory.create(0xca, deviceCode, 2);
+        
     }
 }
