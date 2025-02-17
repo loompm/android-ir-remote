@@ -51,23 +51,23 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
 
         _buttonPowerAll = (ImageButton) findViewById(R.id.id_Button_ALL);
 
-        _button[0] = createIRButton("0", R.drawable.icon_01, _rows[0], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_0));
-        _button[1] = createIRButton("1", R.drawable.icon_02, _rows[0], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_1));
-        _button[2] = createIRButton("2", R.drawable.icon_03, _rows[0], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_2));
+        _button[0] = createIRButton("1", R.drawable.icon_02, _rows[0], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_1));
+        _button[1] = createIRButton("2", R.drawable.icon_03, _rows[0], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_2));
+        _button[2] = createIRButton("3", R.drawable.icon_05, _rows[0], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_3));
+    
+        _button[3] = createIRButton("4", R.drawable.icon_07, _rows[1], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_4));
+        _button[4] = createIRButton("5", R.drawable.icon_08, _rows[1], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_5));
+        _button[5] = createIRButton("6", R.drawable.icon_09, _rows[1], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_6));
 
-        _button[3] = createIRButton("MUTE", R.drawable.icon_04, _rows[1], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_MUTE));
-        _button[4] = createIRButton("3", R.drawable.icon_05, _rows[1], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_3));
-        _button[5] = createIRButton("INPUT", R.drawable.icon_06, _rows[1], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_INPUT));
+        _button[6] = createIRButton("7", R.drawable.icon_10, _rows[2], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_7));
+        _button[7] = createIRButton("8", R.drawable.icon_10, _rows[2], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_8));
+        _button[8] = createIRButton("9", R.drawable.icon_10, _rows[2], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_9));
 
-        _button[6] = createIRButton("4", R.drawable.icon_07, _rows[2], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_4));
-        _button[7] = createIRButton("5", R.drawable.icon_08, _rows[2], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_5));
-        _button[8] = createIRButton("6", R.drawable.icon_09, _rows[2], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_6));
+        _button[9] = createIRButton("0", R.drawable.icon_01, _rows[3], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_0));
+        _button[10] = createIRButton("INPUT", R.drawable.icon_06, _rows[3], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_INPUT));
+        _button[11] = createIRButton("MUTE", R.drawable.icon_04, _rows[3], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_MUTE));
 
-        _button[9] = createIRButton("FWD", R.drawable.icon_10, _rows[3], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_FWD));
-        _button[10] = createIRButton("7", R.drawable.icon_10, _rows[3], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_7));
-        _button[11] = createIRButton("8", R.drawable.icon_10, _rows[3], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_8));
-
-        _button[12] = createIRButton("8", R.drawable.icon_10, _rows[4], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_9));
+        _button[12] = createIRButton("FWD", R.drawable.icon_10, _rows[4], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_FWD));
         _button[13] = createIRButton("REW", R.drawable.icon_10, _rows[4], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_REW));
 
         _lastBurstTime = System.nanoTime();
