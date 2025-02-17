@@ -49,5 +49,20 @@ public class IRMessages
         HDMI_SPLITTER_SET_3 = IRNecFactory.create(168,0,0);
         HDMI_SPLITTER_SET_4 = IRNecFactory.create(144,0,0);
         HDMI_SPLITTER_SET_5 = IRNecFactory.create(152,0,0);
+
+        int deviceCode = 0x86;
+
+        XIAOMI_TV_4S_POWER = IRNecFactory.create(0xcc, 0x3c, 2);
+        XIAOMI_TV_4S_VOLUME_UP = IRNecFactory.create(0x0e, deviceCode, 2);
+        XIAOMI_TV_4S_VOLUME_DOWN = IRNecFactory.create(0x0f, deviceCode, 2);
+        XIAOMI_TV_4S_MUTE = IRNecFactory.create(0xa1, deviceCode, 2);
+        XIAOMI_TV_4S_INPUT = IRNecFactory.create(0x01, deviceCode, 2);
+        XIAOMI_TV_4S_UP = IRNecFactory.create(0x05, deviceCode, 2);
+        XIAOMI_TV_4S_DOWN = IRNecFactory.create(0x06, deviceCode, 2);
+        XIAOMI_TV_4S_LEFT = IRNecFactory.create(0x0b, deviceCode, 2);
+        XIAOMI_TV_4S_RIGHT = IRNecFactory.create(0x0c, deviceCode, 2);
+        XIAOMI_TV_4S_OK = IRNecFactory.create(0x0d, deviceCode, 2);
+        XIAOMI_TV_4S_FWD = IRNecFactory.create(0xa7, deviceCode, 2);
+        XIAOMI_TV_4S_REW = IRNecFactory.create(0xa8, deviceCode, 2);
     }
 }
