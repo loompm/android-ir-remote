@@ -23,6 +23,19 @@ public class IRMessages
     public static IRMessage HOME_LG_TV_ON;
     public static IRMessage HOME_LG_TV_VOLUME_UP;
     public static IRMessage HOME_LG_TV_VOLUME_DOWN;
+    // Xiaomi TV
+    public static IRMessage XIAOMI_TV_4S_POWER;
+    public static IRMessage XIAOMI_TV_4S_VOLUME_UP;
+    public static IRMessage XIAOMI_TV_4S_VOLUME_DOWN;
+    public static IRMessage XIAOMI_TV_4S_MUTE;
+    public static IRMessage XIAOMI_TV_4S_INPUT;
+    public static IRMessage XIAOMI_TV_4S_UP;
+    public static IRMessage XIAOMI_TV_4S_DOWN;
+    public static IRMessage XIAOMI_TV_4S_LEFT;
+    public static IRMessage XIAOMI_TV_4S_RIGHT;
+    public static IRMessage XIAOMI_TV_4S_OK;
+    public static IRMessage XIAOMI_TV_4S_FWD;
+    public static IRMessage XIAOMI_TV_4S_REW;
 
     public static void initialize()
     {
