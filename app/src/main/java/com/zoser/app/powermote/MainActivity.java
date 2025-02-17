@@ -3,7 +3,7 @@ package com.zoser.app.powermote;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Vibrator;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
@@ -13,16 +13,15 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnTouchListener
-{
+public class MainActivity extends AppCompatActivity implements View.OnTouchListener {
     private IRController _irController;
 
     private ImageButton _buttonPowerAll;
 
-    private LinearLayout [] _button = new LinearLayout[12];
-    private IRMessageRequest [] _buttonRequest = new IRMessageRequest[12];
+    private LinearLayout[] _button = new LinearLayout[12];
+    private IRMessageRequest[] _buttonRequest = new IRMessageRequest[12];
 
-    private LinearLayout [] _rows = new LinearLayout[4];
+    private LinearLayout[] _rows = new LinearLayout[4];
 
     private View _currentClickedView = null;
 
@@ -34,8 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     private long _waitTimeMin = 300000;  // Microsecconds
 
     @Override
-    protected void onCreate(Bundle savedInstanceState)
-    {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         IRMessages.initialize();
@@ -65,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         _button[7] = createIRButton("5", R.drawable.icon_08, _rows[4], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_5));
         _button[8] = createIRButton("6", R.drawable.icon_09, _rows[4], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_6));
 
-        _button[9] = createIRButton("FWD", R.drawable.icon_10, _rows[4], new IRMessageRequest(IRMessages. XIAOMI_TV_4S_FWD));
+        _button[9] = createIRButton("FWD", R.drawable.icon_10, _rows[4], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_FWD));
         _button[10] = createIRButton("7", R.drawable.icon_10, _rows[4], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_7));
         _button[11] = createIRButton("8", R.drawable.icon_10, _rows[4], new IRMessageRequest(IRMessages.XIAOMI_TV_4S_8));
 
@@ -74,8 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
 
         _lastBurstTime = System.nanoTime();
 
-        for(int a=0;a<12;a++)
-        {
+        for (int a = 0; a < 12; a++) {
             _button[a].setOnTouchListener(this);
         }
 
@@ -84,51 +81,46 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     }
 
     @Override
-    protected void onPause()
-    {
+    protected void onPause() {
         super.onPause();
-        Log.d("Zoser","onPause");
+        Log.d("Zoser", "onPause");
     }
 
     @Override
-    protected void onRestart()
-    {
+    protected void onRestart() {
         super.onRestart();
 
-        Log.d("Zoser","onRestart");
+        Log.d("Zoser", "onRestart");
     }
 
     @Override
-    protected void onDestroy()
-    {
-        Log.d("Zoser","onDestroy");
+    protected void onDestroy() {
+        Log.d("Zoser", "onDestroy");
         _irController.stopWork();
         super.onDestroy();
     }
 
-    private void getRowReferences()
-    {
-        _rows[0] = (LinearLayout)findViewById(R.id.id_Layout_Row_01);
-        _rows[1] = (LinearLayout)findViewById(R.id.id_Layout_Row_02);
-        _rows[2] = (LinearLayout)findViewById(R.id.id_Layout_Row_03);
-        _rows[3] = (LinearLayout)findViewById(R.id.id_Layout_Row_04);
+    private void getRowReferences() {
+        _rows[0] = (LinearLayout) findViewById(R.id.id_Layout_Row_01);
+        _rows[1] = (LinearLayout) findViewById(R.id.id_Layout_Row_02);
+        _rows[2] = (LinearLayout) findViewById(R.id.id_Layout_Row_03);
+        _rows[3] = (LinearLayout) findViewById(R.id.id_Layout_Row_04);
+        _rows[4] = (LinearLayout) findViewById(R.id.id_Layout_Row_05);
 
     }
 
-
-    private LinearLayout createIRButton(String title, int imageResource, LinearLayout row,IRMessageRequest request)
-    {
+    private LinearLayout createIRButton(String title, int imageResource, LinearLayout row, IRMessageRequest request) {
         View child = getLayoutInflater().inflate(R.layout.widget_button, null);
 
-        RelativeLayout mainLayout = (RelativeLayout)child.findViewById(R.id.layout_main);
-        LinearLayout buttonLayout = (LinearLayout)child.findViewById(R.id.layout_button);
+        RelativeLayout mainLayout = (RelativeLayout) child.findViewById(R.id.layout_main);
+        LinearLayout buttonLayout = (LinearLayout) child.findViewById(R.id.layout_button);
 
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT);
         lp.weight = 1;
         mainLayout.setLayoutParams(lp);
 
-        ImageView imageView = (ImageView)child.findViewById(R.id.image_main);
-        TextView titleView  = (TextView)child.findViewById(R.id.text_title);
+        ImageView imageView = (ImageView) child.findViewById(R.id.image_main);
+        TextView titleView = (TextView) child.findViewById(R.id.text_title);
 
         imageView.setImageResource(imageResource);
         titleView.setText(title);
@@ -140,25 +132,19 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         return buttonLayout;
     }
 
-    public boolean onTouch(View v, MotionEvent event)
-    {
-        _waitTime = Math.max(_waitTime,_waitTimeMin);
-        _waitTime = Math.min(_waitTime,_waitTimeMax);
+    public boolean onTouch(View v, MotionEvent event) {
+        _waitTime = Math.max(_waitTime, _waitTimeMin);
+        _waitTime = Math.min(_waitTime, _waitTimeMax);
 
-        if((System.nanoTime() - _lastBurstTime) > (_waitTime * 1000))
-        {
+        if ((System.nanoTime() - _lastBurstTime) > (_waitTime * 1000)) {
             int ev = event.getActionMasked();
 
-            if(ev == MotionEvent.ACTION_MOVE)
-            {
+            if (ev == MotionEvent.ACTION_MOVE) {
                 _lastBurstTime = System.nanoTime();
 
-                if(v == _buttonPowerAll)
-                {
+                if (v == _buttonPowerAll) {
                     _waitTime = sendIRMessage(new IRMessageRequest(IRMessages.HDMI_SPLITTER_ON, IRMessages.HOME_LG_TV_ON, IRMessages.HOME_SONY_HT_ON));
-                }
-                else
-                {
+                } else {
                     _waitTime = sendIRMessage(((IRMessageRequest) v.getTag()));
                 }
                 return true;
@@ -167,9 +153,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
         return false;
     }
 
-
-    public long sendIRMessage(IRMessageRequest request)
-    {
+    public long sendIRMessage(IRMessageRequest request) {
         _vibrator.vibrate(60);
         return _irController.sendMessage(request);
     }
