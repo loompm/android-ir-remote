@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
     private ImageButton _buttonPowerAll;
 
     private LinearLayout[] _button = new LinearLayout[12];
-    private IRMessageRequest[] _buttonRequest = new IRMessageRequest[14];
+    private IRMessageRequest[] _buttonRequest = new IRMessageRequest[12];
 
     private LinearLayout[] _rows = new LinearLayout[4];
 
@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
 
         _lastBurstTime = System.nanoTime();
 
-        for (int a = 0; a < 14; a++) {
+        for (int a = 0; a < 12; a++) {
             _button[a].setOnTouchListener(this);
         }
 
