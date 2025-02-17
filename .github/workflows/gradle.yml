@@ -32,7 +32,7 @@ jobs:
       run: ./gradlew assembleRelease
 
     - name: Copy files
-      run: \
+      run: |
         mkdir apk
         find . -name "*.apk"
         find . -name "*.apk" -exec cp {} ./apk \;
